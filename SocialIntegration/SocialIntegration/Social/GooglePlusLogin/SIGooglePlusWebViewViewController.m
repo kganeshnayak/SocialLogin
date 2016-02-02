@@ -58,7 +58,7 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
-    if ([[[request URL] absoluteString] containsString:@"com.robosoft.socialtest:/oauth2callback"]) {
+    if ([[[request URL] absoluteString] containsString:@"com.Robosoft.sociallogin:/oauth2callback"]) {
         [GPPURLHandler handleURL:[request URL] sourceApplication:@"com.google.chrome.ios" annotation:nil];
         
         [SIActivityIndicator hideActivityIndicatorInView:self.view];

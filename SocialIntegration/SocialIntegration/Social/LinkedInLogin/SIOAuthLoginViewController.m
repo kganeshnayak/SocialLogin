@@ -17,9 +17,6 @@
 #define API_KEY_LENGTH 12
 #define SECRET_KEY_LENGTH 16
 
-#define API_KEY @"75omghtys4ohwi" //@"7533ru9l365d09"
-#define SECRET_KEY @"DYBcF8Uj2fgmZNaH" //@"agpfsIkBCwABpm8x"
-
 @interface SIOAuthLoginViewController ()<UIWebViewDelegate>
 @property(nonatomic, strong) OAToken *requestToken;
 @property(nonatomic, strong) OAToken *accessToken;
@@ -382,8 +379,8 @@
 */
 - (void)initLinkedInApi
 {
-    apikey = API_KEY;
-    secretkey = SECRET_KEY;
+    apikey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"LinkedInApiKey"];
+    secretkey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"LinkedInSecretKey"];
 
     self.consumer = [[OAConsumer alloc] initWithKey:apikey
                                              secret:secretkey

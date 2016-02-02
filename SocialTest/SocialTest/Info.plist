@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Robosoft.test.SocialTest</string>
+	<string>com.Robosoft.sociallogin</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -28,15 +28,52 @@
 				<string>fb844297865583436</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.Robosoft.sociallogin</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.Robosoft.sociallogin</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
 	<string>844297865583436</string>
 	<key>FacebookDisplayName</key>
-	<string>My Wand App</string>
+	<string>Social Login</string>
+	<key>TwitterConsumerKey</key>
+	<string>I22LgkvDAThdFoAJ0CaSZqlPo</string>
+	<key>TwitterSecretKey</key>
+	<string>dPMkmXZl1PZmGPemhiUMB8WCYJsYXsm6hhc48UuO3ALq3p34ep</string>
+	<key>LinkedInApiKey</key>
+	<string>75omghtys4ohwi</string>
+	<key>LinkedInSecretKey</key>
+	<string>DYBcF8Uj2fgmZNaH</string>
+	<key>GoogleClientId</key>
+	<string>660869542834-rj1u70o6jrfg9hdca1i8g7c5v1pqun06.apps.googleusercontent.com</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>com.google.gppconsent.2.4.1</string>
+		<string>com.google.gppconsent.2.4.0</string>
+		<string>com.google.gppconsent.2.3.0</string>
+		<string>com.google.gppconsent.2.2.0</string>
+		<string>com.google.gppconsent</string>
+		<string>hasgplus4</string>
+		<string>googlechrome-x-callback</string>
+		<string>googlechrome</string>
+		<string>gplus</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSPrincipalClass</key>
 	<string>SIApplication</string>
 	<key>UILaunchStoryboardName</key>

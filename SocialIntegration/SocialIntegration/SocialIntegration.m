@@ -21,8 +21,6 @@
 
 #define ApplicationOpenGoogleAuthNotification @"ApplicationOpenGoogleAuthNotification"
 
-static NSString * const kClientID = @"243361821885-5imkjlkc713rhr5evf47ilk9bnfqsa0v.apps.googleusercontent.com";
-
 @interface SocialIntegration()<LinkedinProtocol, GooglePlusinProtocol, GPPSignInDelegate>
 @property (nonatomic, strong) SIFacebookManager *facebookManager;
 @end
@@ -84,7 +82,10 @@ static NSString * const kClientID = @"243361821885-5imkjlkc713rhr5evf47ilk9bnfqs
 
 - (void) signInTwitter
 {
-    [[FHSTwitterEngine sharedEngine]permanentlySetConsumerKey:@"I22LgkvDAThdFoAJ0CaSZqlPo" andSecret:@"dPMkmXZl1PZmGPemhiUMB8WCYJsYXsm6hhc48UuO3ALq3p34ep"];
+    NSString *consumerKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"TwitterConsumerKey"];
+    NSString *secretKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"TwitterSecretKey"];
+    [[FHSTwitterEngine sharedEngine]permanentlySetConsumerKey:consumerKey andSecret:secretKey];
+
     UIViewController *loginController = [[FHSTwitterEngine sharedEngine]loginControllerWithCompletionHandler:^(BOOL success) {
         FHSTwitterEngine *twitterEngine = [FHSTwitterEngine sharedEngine];
         NSLog(@"Twitter Id: %@", twitterEngine.authenticatedID);
@@ -99,7 +100,7 @@ static NSString * const kClientID = @"243361821885-5imkjlkc713rhr5evf47ilk9bnfqs
     signIn.shouldFetchGoogleUserEmail = YES;
     signIn.shouldFetchGoogleUserID = YES;
     signIn.scopes = [NSArray arrayWithObjects:kGTLAuthScopePlusLogin,nil];
-    signIn.clientID = kClientID;
+    signIn.clientID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GoogleClientId"];
     signIn.actions = [NSArray arrayWithObjects:@"http://schemas.google.com/ListenActivity",nil];
     signIn.delegate=self;
     [signIn authenticate];
