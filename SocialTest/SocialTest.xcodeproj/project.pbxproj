@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		1FB4A3C11C5FBB330098F314 /* login_button_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FB4A3C01C5FBB330098F314 /* login_button_twitter.png */; };
 		6CBAC3531B9EB5E3002D0B83 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC34F1B9EB5E3002D0B83 /* FacebookSDK.framework */; };
-		6CBAC3541B9EB5E3002D0B83 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3501B9EB5E3002D0B83 /* GoogleOpenSource.framework */; };
-		6CBAC3551B9EB5E3002D0B83 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6CBAC3511B9EB5E3002D0B83 /* GooglePlus.bundle */; };
-		6CBAC3561B9EB5E3002D0B83 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3521B9EB5E3002D0B83 /* GooglePlus.framework */; };
 		6CBAC3581B9EB617002D0B83 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3571B9EB617002D0B83 /* AddressBook.framework */; };
 		6CBAC35A1B9EB61F002D0B83 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3591B9EB61F002D0B83 /* QuartzCore.framework */; };
 		6CBAC35C1B9EB628002D0B83 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC35B1B9EB628002D0B83 /* CoreMotion.framework */; };
@@ -49,9 +46,6 @@
 		1FB4A3C01C5FBB330098F314 /* login_button_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button_twitter.png; sourceTree = "<group>"; };
 		6CBAC34D1B9EB482002D0B83 /* SIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIApplication.h; sourceTree = "<group>"; };
 		6CBAC34F1B9EB5E3002D0B83 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Framework/FacebookSDK.framework; sourceTree = "<group>"; };
-		6CBAC3501B9EB5E3002D0B83 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleOpenSource.framework; path = Framework/GoogleOpenSource.framework; sourceTree = "<group>"; };
-		6CBAC3511B9EB5E3002D0B83 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlus.bundle; path = Framework/GooglePlus.bundle; sourceTree = "<group>"; };
-		6CBAC3521B9EB5E3002D0B83 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlus.framework; path = Framework/GooglePlus.framework; sourceTree = "<group>"; };
 		6CBAC3571B9EB617002D0B83 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		6CBAC3591B9EB61F002D0B83 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6CBAC35B1B9EB628002D0B83 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -113,8 +107,6 @@
 				6CBAC35A1B9EB61F002D0B83 /* QuartzCore.framework in Frameworks */,
 				6CBAC3581B9EB617002D0B83 /* AddressBook.framework in Frameworks */,
 				6CE195B61B997BE100A74C58 /* libSocialIntegration.a in Frameworks */,
-				6CBAC3561B9EB5E3002D0B83 /* GooglePlus.framework in Frameworks */,
-				6CBAC3541B9EB5E3002D0B83 /* GoogleOpenSource.framework in Frameworks */,
 				6CBAC3531B9EB5E3002D0B83 /* FacebookSDK.framework in Frameworks */,
 				6CF979291C61D83D00B2A884 /* GoogleSignIn.framework in Frameworks */,
 			);
@@ -144,9 +136,6 @@
 				6CBAC3591B9EB61F002D0B83 /* QuartzCore.framework */,
 				6CBAC3571B9EB617002D0B83 /* AddressBook.framework */,
 				6CBAC34F1B9EB5E3002D0B83 /* FacebookSDK.framework */,
-				6CBAC3501B9EB5E3002D0B83 /* GoogleOpenSource.framework */,
-				6CBAC3511B9EB5E3002D0B83 /* GooglePlus.bundle */,
-				6CBAC3521B9EB5E3002D0B83 /* GooglePlus.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -277,7 +266,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CBAC3551B9EB5E3002D0B83 /* GooglePlus.bundle in Resources */,
 				6CBAC3871B9F054B002D0B83 /* login_button_linkedin.png in Resources */,
 				6CBAC3861B9F054B002D0B83 /* login_button_facebook.png in Resources */,
 				1FB4A3C11C5FBB330098F314 /* login_button_twitter.png in Resources */,
