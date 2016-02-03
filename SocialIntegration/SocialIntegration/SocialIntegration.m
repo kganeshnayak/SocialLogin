@@ -9,11 +9,6 @@
 #import "SocialIntegration.h"
 #import "SIOAuthLoginViewController.h"
 
-#include "SIGooglePlusWebViewViewController.h"
-#import <GoogleOpenSource/GoogleOpenSource.h>
-#import <GooglePlus/GooglePlus.h>
-#import <CoreMotion/CoreMotion.h>
-
 #import <FacebookSDK/FacebookSDK.h>
 #import "SIActivityIndicator.h"
 #import "SIFacebookManager.h"
@@ -21,9 +16,7 @@
 
 #import <GoogleSignIn/GoogleSignIn.h>
 
-#define ApplicationOpenGoogleAuthNotification @"ApplicationOpenGoogleAuthNotification"
-
-@interface SocialIntegration()<LinkedinProtocol, GooglePlusinProtocol, GPPSignInDelegate, GIDSignInUIDelegate>
+@interface SocialIntegration()<LinkedinProtocol, GIDSignInUIDelegate>
 @property (nonatomic, strong) SIFacebookManager *facebookManager;
 @end
 
@@ -32,8 +25,6 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(presentGoogleWebView:) name:ApplicationOpenGoogleAuthNotification object:nil];
 }
 
 - (void) addFacebookButtonAtFrame:(CGRect) aFrame withImage:(UIImage *) image
@@ -98,15 +89,6 @@
 
 - (void) signInGoogle
 {
-//    GPPSignIn *signIn = [GPPSignIn sharedInstance];
-//    signIn.shouldFetchGoogleUserEmail = YES;
-//    signIn.shouldFetchGoogleUserID = YES;
-//    signIn.scopes = [NSArray arrayWithObjects:kGTLAuthScopePlusLogin,nil];
-//    signIn.clientID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GoogleClientId"];
-//    signIn.actions = [NSArray arrayWithObjects:@"http://schemas.google.com/ListenActivity",nil];
-//    signIn.delegate=self;
-//    [signIn authenticate];
-    
     [GIDSignIn sharedInstance].clientID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GoogleClientId"];
     [GIDSignIn sharedInstance].delegate = self;
     [GIDSignIn sharedInstance].uiDelegate = self;
@@ -129,70 +111,13 @@
 - (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
     // Perform any operations on signed in user here.
     NSString *userId = user.userID;                  // For client-side use only!
-    NSString *idToken = user.authentication.idToken; // Safe to send to the server
-    NSString *name = user.profile.name;
-    NSString *email = user.profile.email;
-    // ...
-    
+//    NSString *idToken = user.authentication.idToken; // Safe to send to the server
+//    NSString *name = user.profile.name;
+//    NSString *email = user.profile.email;
     if ([self.delegate respondsToSelector:@selector(didRecieveUserId:forType:)])
     {
         [self.delegate didRecieveUserId:userId forType:SIGooglePlus];
     }
-}
-
-- (void)finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error
-{
-    if (error)
-    {
-        // Do some error handling here.
-    }
-    else
-    {
-        GTLQueryPlus *query = [GTLQueryPlus queryForPeopleGetWithUserId:@"me"];
-        
-        NSLog(@"email %@ ", [NSString stringWithFormat:@"Email: %@",[GPPSignIn sharedInstance].authentication.userEmail]);
-        NSLog(@"Received error %@ and auth object %@",error, auth);
-        
-        // 1. Create a |GTLServicePlus| instance to send a request to Google+.
-        GTLServicePlus* plusService = [[GTLServicePlus alloc] init] ;
-        plusService.retryEnabled = YES;
-        
-        // 2. Set a valid |GTMOAuth2Authentication| object as the authorizer.
-        [plusService setAuthorizer:[GPPSignIn sharedInstance].authentication];
-        
-        // 3. Use the "v1" version of the Google+ API.*
-        plusService.apiVersion = @"v1";
-        [plusService executeQuery:query
-                completionHandler:^(GTLServiceTicket *ticket,
-                                    GTLPlusPerson *person,
-                                    NSError *error) {
-                    if (error) {
-                        //Handle Error
-                    } else {
-                        NSLog(@"Email= %@", [GPPSignIn sharedInstance].authentication.userEmail);
-                        NSLog(@"GoogleID=%@", person.identifier);
-                        NSLog(@"User Name=%@", [person.name.givenName stringByAppendingFormat:@" %@", person.name.familyName]);
-                        NSLog(@"Gender=%@", person.gender);
-                        
-                        if ([self.delegate respondsToSelector:@selector(didRecieveUserId:forType:)])
-                        {
-                            [self.delegate didRecieveUserId:person.identifier forType:SILinkedIn];
-                        }
-                    }
-                }];
-    }
-}
-
-- (void) presentGoogleWebView:(NSNotification*)googleNotification
-{
-    id  object = googleNotification.object;
-    SIGooglePlusWebViewViewController *googleWebViewController = [[SIGooglePlusWebViewViewController alloc] init];
-    googleWebViewController.view.frame = self.view.bounds;
-    googleWebViewController.delegate = self;
-    googleWebViewController.urlToBeLoaded = object;
-    [self addChildViewController:googleWebViewController];
-    [self.view addSubview:googleWebViewController.view];
-    [self performBounceEffectWithView:googleWebViewController.view];
 }
 
 - (void) signInWithLinkedIn
@@ -317,14 +242,6 @@
     if ([self.delegate respondsToSelector:@selector(didRecieveUserId:forType:)])
     {
         [self.delegate didRecieveUserId:userId forType:SILinkedIn];
-    }
-}
-
-- (void) fetchGooglePlusinUserId:(NSString *) userId
-{
-    if ([self.delegate respondsToSelector:@selector(didRecieveUserId:forType:)])
-    {
-        [self.delegate didRecieveUserId:userId forType:SIGooglePlus];
     }
 }
 

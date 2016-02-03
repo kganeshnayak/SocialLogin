@@ -10,19 +10,6 @@
 
 @implementation SIApplication
 
-//    - (BOOL)application:(UIApplication *)application
-//    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    //    NSError* configureError;
-//    //    [[GGLContext sharedInstance] configureWithError: &configureError];
-//    //    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
-//
-//    [GIDSignIn sharedInstance].clientID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GoogleClientId"];
-//    [GIDSignIn sharedInstance].delegate = self;
-//
-//    return YES;
-//    }
-
-
 - (BOOL)application:(UIApplication *)app
             openURL:(NSURL *)url
             options:(NSDictionary *)options {

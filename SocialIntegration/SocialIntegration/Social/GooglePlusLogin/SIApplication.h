@@ -8,7 +8,6 @@
 #import <UIKit/UIKit.h>
 #import <GoogleSignIn/GoogleSignIn.h>
 
-
 #define ApplicationOpenGoogleAuthNotification @"ApplicationOpenGoogleAuthNotification"
 
 @interface SIApplication : UIApplication

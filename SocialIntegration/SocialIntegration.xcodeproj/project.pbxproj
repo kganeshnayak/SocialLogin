@@ -12,7 +12,6 @@
 		1FAFE63D1B9CAADC00178117 /* SIFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE1960A1B999C5800A74C58 /* SIFacebookManager.m */; };
 		1FB4A3BD1C5FABEC0098F314 /* FHSStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB4A3BA1C5FABEC0098F314 /* FHSStream.m */; };
 		1FB4A3BE1C5FABEC0098F314 /* FHSTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB4A3BC1C5FABEC0098F314 /* FHSTwitterEngine.m */; };
-		6CBAC31F1B9EB00C002D0B83 /* SIGooglePlusWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBAC31A1B9EB00C002D0B83 /* SIGooglePlusWebViewViewController.m */; };
 		6CBAC3201B9EB00C002D0B83 /* SIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBAC31C1B9EB00C002D0B83 /* SIApplication.m */; };
 		6CBAC32A1B9EB10B002D0B83 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3271B9EB10B002D0B83 /* GoogleOpenSource.framework */; };
 		6CBAC32B1B9EB10B002D0B83 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3291B9EB10B002D0B83 /* GooglePlus.framework */; };
@@ -74,8 +73,6 @@
 		1FB4A3BA1C5FABEC0098F314 /* FHSStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHSStream.m; sourceTree = "<group>"; };
 		1FB4A3BB1C5FABEC0098F314 /* FHSTwitterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHSTwitterEngine.h; sourceTree = "<group>"; };
 		1FB4A3BC1C5FABEC0098F314 /* FHSTwitterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHSTwitterEngine.m; sourceTree = "<group>"; };
-		6CBAC3191B9EB00C002D0B83 /* SIGooglePlusWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIGooglePlusWebViewViewController.h; sourceTree = "<group>"; };
-		6CBAC31A1B9EB00C002D0B83 /* SIGooglePlusWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIGooglePlusWebViewViewController.m; sourceTree = "<group>"; };
 		6CBAC31B1B9EB00C002D0B83 /* SIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIApplication.h; sourceTree = "<group>"; };
 		6CBAC31C1B9EB00C002D0B83 /* SIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIApplication.m; sourceTree = "<group>"; };
 		6CBAC3271B9EB10B002D0B83 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
@@ -207,8 +204,6 @@
 		6CBAC3181B9EB00C002D0B83 /* GooglePlusLogin */ = {
 			isa = PBXGroup;
 			children = (
-				6CBAC3191B9EB00C002D0B83 /* SIGooglePlusWebViewViewController.h */,
-				6CBAC31A1B9EB00C002D0B83 /* SIGooglePlusWebViewViewController.m */,
 				6CBAC31B1B9EB00C002D0B83 /* SIApplication.h */,
 				6CBAC31C1B9EB00C002D0B83 /* SIApplication.m */,
 			);
@@ -487,7 +482,6 @@
 				6CE196471B99A15800A74C58 /* NSString+URLEncoding.m in Sources */,
 				6CBAC3201B9EB00C002D0B83 /* SIApplication.m in Sources */,
 				6CE196531B99A15800A74C58 /* OAProblem.m in Sources */,
-				6CBAC31F1B9EB00C002D0B83 /* SIGooglePlusWebViewViewController.m in Sources */,
 				1F3831901B9B5F8C009FA94B /* SIOAuthLoginViewController.m in Sources */,
 				6CE196561B99A15800A74C58 /* OAToken.m in Sources */,
 				6CE196511B99A15800A74C58 /* OAMutableURLRequest.m in Sources */,
