@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Ganesh Nayak. All rights reserved.
 //
 #import <UIKit/UIKit.h>
+#import <GoogleSignIn/GoogleSignIn.h>
+
 
 #define ApplicationOpenGoogleAuthNotification @"ApplicationOpenGoogleAuthNotification"
 

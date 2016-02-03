@@ -19,9 +19,11 @@
 #import "SIFacebookManager.h"
 #import "FHSTwitterEngine.h"
 
+#import <GoogleSignIn/GoogleSignIn.h>
+
 #define ApplicationOpenGoogleAuthNotification @"ApplicationOpenGoogleAuthNotification"
 
-@interface SocialIntegration()<LinkedinProtocol, GooglePlusinProtocol, GPPSignInDelegate>
+@interface SocialIntegration()<LinkedinProtocol, GooglePlusinProtocol, GPPSignInDelegate, GIDSignInUIDelegate>
 @property (nonatomic, strong) SIFacebookManager *facebookManager;
 @end
 
@@ -96,14 +98,46 @@
 
 - (void) signInGoogle
 {
-    GPPSignIn *signIn = [GPPSignIn sharedInstance];
-    signIn.shouldFetchGoogleUserEmail = YES;
-    signIn.shouldFetchGoogleUserID = YES;
-    signIn.scopes = [NSArray arrayWithObjects:kGTLAuthScopePlusLogin,nil];
-    signIn.clientID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GoogleClientId"];
-    signIn.actions = [NSArray arrayWithObjects:@"http://schemas.google.com/ListenActivity",nil];
-    signIn.delegate=self;
-    [signIn authenticate];
+//    GPPSignIn *signIn = [GPPSignIn sharedInstance];
+//    signIn.shouldFetchGoogleUserEmail = YES;
+//    signIn.shouldFetchGoogleUserID = YES;
+//    signIn.scopes = [NSArray arrayWithObjects:kGTLAuthScopePlusLogin,nil];
+//    signIn.clientID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GoogleClientId"];
+//    signIn.actions = [NSArray arrayWithObjects:@"http://schemas.google.com/ListenActivity",nil];
+//    signIn.delegate=self;
+//    [signIn authenticate];
+    
+    [GIDSignIn sharedInstance].clientID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GoogleClientId"];
+    [GIDSignIn sharedInstance].delegate = self;
+    [GIDSignIn sharedInstance].uiDelegate = self;
+    //the following line is optional, default value is YES anyway
+    [GIDSignIn sharedInstance].allowsSignInWithWebView = YES;
+    [[GIDSignIn sharedInstance] signIn];
+}
+
+// Present a view that prompts the user to sign in with Google
+- (void)signIn:(GIDSignIn *)signIn presentViewController:(UIViewController *)viewController {
+    [self presentViewController:viewController animated:YES completion:nil];
+}
+
+// Dismiss the "Sign in with Google" view
+- (void)signIn:(GIDSignIn *)signIn dismissViewController:(UIViewController *)viewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
+    // Perform any operations on signed in user here.
+    NSString *userId = user.userID;                  // For client-side use only!
+    NSString *idToken = user.authentication.idToken; // Safe to send to the server
+    NSString *name = user.profile.name;
+    NSString *email = user.profile.email;
+    // ...
+    
+    if ([self.delegate respondsToSelector:@selector(didRecieveUserId:forType:)])
+    {
+        [self.delegate didRecieveUserId:userId forType:SIGooglePlus];
+    }
 }
 
 - (void)finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error
@@ -273,7 +307,7 @@
     [FBRequestConnection startWithGraphPath:@"/me" parameters:nil HTTPMethod:@"GET" completionHandler:^(FBRequestConnection* connection,
                          NSDictionary<FBGraphUser>* result, NSError* error)
      {
-         NSLog(@"User Info =%@", result);
+//         NSLog(@"User Info =%@", result);
          /* handle the result */
      }];
 }

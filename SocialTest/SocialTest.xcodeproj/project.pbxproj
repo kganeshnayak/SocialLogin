@@ -38,6 +38,11 @@
 		6CD154CE1B987D3B00E0E80B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CD154CD1B987D3B00E0E80B /* Images.xcassets */; };
 		6CD154D11B987D3B00E0E80B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD154CF1B987D3B00E0E80B /* LaunchScreen.xib */; };
 		6CE195B61B997BE100A74C58 /* libSocialIntegration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE195B51B997BE100A74C58 /* libSocialIntegration.a */; };
+		6CF979231C61D74C00B2A884 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF979221C61D74C00B2A884 /* StoreKit.framework */; };
+		6CF979251C61D77900B2A884 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CF979241C61D77900B2A884 /* GoogleService-Info.plist */; };
+		6CF979281C61D83D00B2A884 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6CF979261C61D83D00B2A884 /* GoogleSignIn.bundle */; };
+		6CF979291C61D83D00B2A884 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF979271C61D83D00B2A884 /* GoogleSignIn.framework */; };
+		6CF9792B1C61D88E00B2A884 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF9792A1C61D88E00B2A884 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +84,11 @@
 		6CD154D01B987D3B00E0E80B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6CE195B41B997BE100A74C58 /* SocialIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialIntegration.h; sourceTree = "<group>"; };
 		6CE195B51B997BE100A74C58 /* libSocialIntegration.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialIntegration.a; sourceTree = "<group>"; };
+		6CF979221C61D74C00B2A884 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		6CF979241C61D77900B2A884 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6CF979261C61D83D00B2A884 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = Framework/GoogleSignIn.bundle; sourceTree = "<group>"; };
+		6CF979271C61D83D00B2A884 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = Framework/GoogleSignIn.framework; sourceTree = "<group>"; };
+		6CF9792A1C61D88E00B2A884 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CF9792B1C61D88E00B2A884 /* libz.tbd in Frameworks */,
+				6CF979231C61D74C00B2A884 /* StoreKit.framework in Frameworks */,
 				6CBAC3741B9EB6B5002D0B83 /* AssetsLibrary.framework in Frameworks */,
 				6CBAC3721B9EB6B0002D0B83 /* CoreLocation.framework in Frameworks */,
 				6CBAC3701B9EB6AA002D0B83 /* MediaPlayer.framework in Frameworks */,
@@ -104,6 +116,7 @@
 				6CBAC3561B9EB5E3002D0B83 /* GooglePlus.framework in Frameworks */,
 				6CBAC3541B9EB5E3002D0B83 /* GoogleOpenSource.framework in Frameworks */,
 				6CBAC3531B9EB5E3002D0B83 /* FacebookSDK.framework in Frameworks */,
+				6CF979291C61D83D00B2A884 /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +126,8 @@
 		6CBAC34E1B9EB589002D0B83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CF979261C61D83D00B2A884 /* GoogleSignIn.bundle */,
+				6CF979271C61D83D00B2A884 /* GoogleSignIn.framework */,
 				6CBAC3731B9EB6B5002D0B83 /* AssetsLibrary.framework */,
 				6CBAC3711B9EB6B0002D0B83 /* CoreLocation.framework */,
 				6CBAC36F1B9EB6AA002D0B83 /* MediaPlayer.framework */,
@@ -152,6 +167,8 @@
 		6CD154B41B987D3B00E0E80B = {
 			isa = PBXGroup;
 			children = (
+				6CF9792A1C61D88E00B2A884 /* libz.tbd */,
+				6CF979221C61D74C00B2A884 /* StoreKit.framework */,
 				6CD154BF1B987D3B00E0E80B /* SocialTest */,
 				6CD154BE1B987D3B00E0E80B /* Products */,
 			);
@@ -188,6 +205,7 @@
 				6CE195B31B997BE100A74C58 /* include */,
 				6CE195B51B997BE100A74C58 /* libSocialIntegration.a */,
 				6CD154C11B987D3B00E0E80B /* Info.plist */,
+				6CF979241C61D77900B2A884 /* GoogleService-Info.plist */,
 				6CD154C21B987D3B00E0E80B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -263,6 +281,8 @@
 				6CBAC3871B9F054B002D0B83 /* login_button_linkedin.png in Resources */,
 				6CBAC3861B9F054B002D0B83 /* login_button_facebook.png in Resources */,
 				1FB4A3C11C5FBB330098F314 /* login_button_twitter.png in Resources */,
+				6CF979281C61D83D00B2A884 /* GoogleSignIn.bundle in Resources */,
+				6CF979251C61D77900B2A884 /* GoogleService-Info.plist in Resources */,
 				6CD154CC1B987D3B00E0E80B /* Main.storyboard in Resources */,
 				6CD154D11B987D3B00E0E80B /* LaunchScreen.xib in Resources */,
 				6CBAC3811B9EC148002D0B83 /* login_button_google.png in Resources */,
@@ -408,7 +428,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SocialTest",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "95957e64-f0fb-47ea-bf16-8e3d01fbedfb";
 			};
@@ -435,7 +458,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SocialTest",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "95957e64-f0fb-47ea-bf16-8e3d01fbedfb";
 			};

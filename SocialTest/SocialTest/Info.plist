@@ -38,6 +38,14 @@
 				<string>com.Robosoft.sociallogin</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.660869542834-tvn3l0s8k54uibe3fgts5cdotsb77i2t</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -45,16 +53,8 @@
 	<string>844297865583436</string>
 	<key>FacebookDisplayName</key>
 	<string>Social Login</string>
-	<key>TwitterConsumerKey</key>
-	<string>I22LgkvDAThdFoAJ0CaSZqlPo</string>
-	<key>TwitterSecretKey</key>
-	<string>dPMkmXZl1PZmGPemhiUMB8WCYJsYXsm6hhc48UuO3ALq3p34ep</string>
-	<key>LinkedInApiKey</key>
-	<string>75omghtys4ohwi</string>
-	<key>LinkedInSecretKey</key>
-	<string>DYBcF8Uj2fgmZNaH</string>
 	<key>GoogleClientId</key>
-	<string>660869542834-rj1u70o6jrfg9hdca1i8g7c5v1pqun06.apps.googleusercontent.com</string>
+	<string>660869542834-tvn3l0s8k54uibe3fgts5cdotsb77i2t.apps.googleusercontent.com</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>com.google.gppconsent.2.4.1</string>
@@ -66,9 +66,16 @@
 		<string>googlechrome-x-callback</string>
 		<string>googlechrome</string>
 		<string>gplus</string>
+		<string>com-google-gidconsent-google</string>
+		<string>com-google-gidconsent-youtube</string>
+		<string>com-google-gidconsent</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>LinkedInApiKey</key>
+	<string>75omghtys4ohwi</string>
+	<key>LinkedInSecretKey</key>
+	<string>DYBcF8Uj2fgmZNaH</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -76,6 +83,10 @@
 	</dict>
 	<key>NSPrincipalClass</key>
 	<string>SIApplication</string>
+	<key>TwitterConsumerKey</key>
+	<string>I22LgkvDAThdFoAJ0CaSZqlPo</string>
+	<key>TwitterSecretKey</key>
+	<string>dPMkmXZl1PZmGPemhiUMB8WCYJsYXsm6hhc48UuO3ALq3p34ep</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

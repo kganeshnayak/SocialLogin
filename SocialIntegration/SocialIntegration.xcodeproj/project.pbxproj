@@ -51,6 +51,8 @@
 		6CE196551B99A15800A74C58 /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE1963E1B99A15800A74C58 /* OAServiceTicket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6CE196561B99A15800A74C58 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE196411B99A15800A74C58 /* OAToken.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6CE196571B99A15800A74C58 /* OATokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE196431B99A15800A74C58 /* OATokenManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6CF9791B1C61D0B100B2A884 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF9791A1C61D0B100B2A884 /* GoogleSignIn.framework */; };
+		6CF9791D1C61D11B00B2A884 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF9791C1C61D11B00B2A884 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -148,6 +150,9 @@
 		6CE196431B99A15800A74C58 /* OATokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OATokenManager.m; sourceTree = "<group>"; };
 		6CE196441B99A15800A74C58 /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthConsumer.h; sourceTree = "<group>"; };
 		6CE1965B1B99C99000A74C58 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		6CF979191C61D0B100B2A884 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		6CF9791A1C61D0B100B2A884 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		6CF9791C1C61D11B00B2A884 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +160,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CF9791D1C61D11B00B2A884 /* StoreKit.framework in Frameworks */,
 				6CBAC3491B9EB1D4002D0B83 /* AddressBook.framework in Frameworks */,
 				6CBAC3471B9EB1CA002D0B83 /* QuartzCore.framework in Frameworks */,
+				6CF9791B1C61D0B100B2A884 /* GoogleSignIn.framework in Frameworks */,
 				6CBAC3451B9EB1C4002D0B83 /* CoreMotion.framework in Frameworks */,
 				6CBAC3431B9EB1BE002D0B83 /* MobileCoreServices.framework in Frameworks */,
 				6CBAC3411B9EB1B6002D0B83 /* MessageUI.framework in Frameworks */,
@@ -224,6 +231,7 @@
 		6CD154E81B987F0900E0E80B = {
 			isa = PBXGroup;
 			children = (
+				6CF9791C1C61D11B00B2A884 /* StoreKit.framework */,
 				6CD154F31B987F0900E0E80B /* SocialIntegration */,
 				6CD154F21B987F0900E0E80B /* Products */,
 			);
@@ -374,6 +382,8 @@
 		6CE1965A1B99C99000A74C58 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				6CF979191C61D0B100B2A884 /* GoogleSignIn.bundle */,
+				6CF9791A1C61D0B100B2A884 /* GoogleSignIn.framework */,
 				6CBAC3481B9EB1D4002D0B83 /* AddressBook.framework */,
 				6CBAC3461B9EB1CA002D0B83 /* QuartzCore.framework */,
 				6CBAC3441B9EB1C4002D0B83 /* CoreMotion.framework */,
@@ -592,7 +602,10 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -609,7 +622,10 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

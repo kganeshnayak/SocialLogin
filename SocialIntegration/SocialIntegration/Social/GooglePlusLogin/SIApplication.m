@@ -10,22 +10,39 @@
 
 @implementation SIApplication
 
-- (BOOL)openURL:(NSURL*)url {
-    
-    // this whole class is a fix, to get google aut inside the webview
-    // http://stackoverflow.com/questions/15281386/google-iphone-api-sign-in-and-share-without-leaving-app/24577040#24577040
-    
-    if ([[url absoluteString] hasPrefix:@"googlechrome-x-callback:"]) {
-        
-        return NO;
-        
-    } else if ([[url absoluteString] hasPrefix:@"https://accounts.google.com/o/oauth2/auth"]) {
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:ApplicationOpenGoogleAuthNotification object:url];
-        return NO;
-        
-    }
-    
-    return [super openURL:url];
+//    - (BOOL)application:(UIApplication *)application
+//    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    //    NSError* configureError;
+//    //    [[GGLContext sharedInstance] configureWithError: &configureError];
+//    //    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+//
+//    [GIDSignIn sharedInstance].clientID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GoogleClientId"];
+//    [GIDSignIn sharedInstance].delegate = self;
+//
+//    return YES;
+//    }
+
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary *)options {
+    return [[GIDSignIn sharedInstance] handleURL:url
+                               sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                      annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
 }
+
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    NSDictionary *options = @{UIApplicationOpenURLOptionsSourceApplicationKey: sourceApplication,
+                              UIApplicationOpenURLOptionsAnnotationKey: annotation};
+    return [self application:application
+                     openURL:url
+                     options:options];
+}
+
+
+
 @end
