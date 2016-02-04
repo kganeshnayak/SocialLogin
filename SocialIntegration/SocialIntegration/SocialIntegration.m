@@ -16,8 +16,13 @@
 
 #import <GoogleSignIn/GoogleSignIn.h>
 
-@interface SocialIntegration()<LinkedinProtocol, GIDSignInUIDelegate>
+@interface SocialIntegration()<LinkedinProtocol, GIDSignInUIDelegate, GIDSignInDelegate>
 @property (nonatomic, strong) SIFacebookManager *facebookManager;
+@property (nonatomic, copy) CompletionHandler fbCompletionHandler;
+@property (nonatomic, copy) CompletionHandler glCompletionHandler;
+@property (nonatomic, copy) CompletionHandler liCompletionHandler;
+@property (nonatomic, copy) CompletionHandler twCompletionHandler;
+
 @end
 
 @implementation SocialIntegration
@@ -27,24 +32,28 @@
     [super viewDidLoad];
 }
 
-- (void) addFacebookButtonAtFrame:(CGRect) aFrame withImage:(UIImage *) image
+- (void) loginToService:(SISocialType) eType withSignInButtonImage:(UIImage *) buttonImage atCoordinateSpace:(CGRect) aRect withCompletionHandler:(CompletionHandler)inCompletionHandler
 {
-    [self addImageForType:SIFacebook withFrame:aFrame withImage:image];
-}
-
-- (void) addLinkedInButtonAtFrame:(CGRect) aFrame withImage:(UIImage *) image
-{
-    [self addImageForType:SILinkedIn withFrame:aFrame withImage:image];
-}
-
-- (void) addGooglePlusButtonAtFrame:(CGRect) aFrame withImage:(UIImage *) image
-{
-    [self addImageForType:SIGooglePlus withFrame:aFrame withImage:image];
-}
-
-- (void) addTwitterButtonAtFrame:(CGRect) aFrame withImage:(UIImage *) image
-{
-    [self addImageForType:SITwitter withFrame:aFrame withImage:image];
+    switch (eType) {
+        case SITwitter:
+            [self addImageForType:SITwitter withFrame:aRect withImage:buttonImage];
+            _twCompletionHandler = inCompletionHandler;
+            break;
+        case SIFacebook:
+            [self addImageForType:SIFacebook withFrame:aRect withImage:buttonImage];
+            _fbCompletionHandler = inCompletionHandler;
+            break;
+        case SIGoogle:
+            [self addImageForType:SIGoogle withFrame:aRect withImage:buttonImage];
+            _glCompletionHandler = inCompletionHandler;
+            break;
+        case SILinkedIn:
+            [self addImageForType:SILinkedIn withFrame:aRect withImage:buttonImage];
+            _liCompletionHandler = inCompletionHandler;
+            break;
+        default:
+            break;
+    }
 }
 
 - (void) addImageForType:(SISocialType) aType withFrame:(CGRect) aFrame withImage:(UIImage *) image
@@ -58,7 +67,7 @@
         case SIFacebook:
             [socialSignInButton addTarget:self action:@selector(signInWithFacebook) forControlEvents:UIControlEventTouchUpInside];
             break;
-        case SIGooglePlus:
+        case SIGoogle:
             [socialSignInButton addTarget:self action:@selector(signInGoogle) forControlEvents:UIControlEventTouchUpInside];
             break;
         case SILinkedIn:
@@ -81,8 +90,7 @@
 
     UIViewController *loginController = [[FHSTwitterEngine sharedEngine]loginControllerWithCompletionHandler:^(BOOL success) {
         FHSTwitterEngine *twitterEngine = [FHSTwitterEngine sharedEngine];
-        NSLog(@"Twitter Id: %@", twitterEngine.authenticatedID);
-
+        _twCompletionHandler (twitterEngine.authenticatedID);
     }];
     [self presentViewController:loginController animated:YES completion:nil];
 }
@@ -90,8 +98,8 @@
 - (void) signInGoogle
 {
     [GIDSignIn sharedInstance].clientID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GoogleClientId"];
-    [GIDSignIn sharedInstance].delegate = self;
     [GIDSignIn sharedInstance].uiDelegate = self;
+    [GIDSignIn sharedInstance].delegate = self;
     //the following line is optional, default value is YES anyway
     [GIDSignIn sharedInstance].allowsSignInWithWebView = YES;
     [[GIDSignIn sharedInstance] signIn];
@@ -107,17 +115,13 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
 - (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
     // Perform any operations on signed in user here.
     NSString *userId = user.userID;                  // For client-side use only!
 //    NSString *idToken = user.authentication.idToken; // Safe to send to the server
 //    NSString *name = user.profile.name;
 //    NSString *email = user.profile.email;
-    if ([self.delegate respondsToSelector:@selector(didRecieveUserId:forType:)])
-    {
-        [self.delegate didRecieveUserId:userId forType:SIGooglePlus];
-    }
+    _glCompletionHandler (userId);
 }
 
 - (void) signInWithLinkedIn
@@ -196,12 +200,7 @@
             [SIActivityIndicator hideActivityIndicatorInView:self.view];
 
             NSString *userId = result.id;
-            NSLog(@"Facebook UserID: %@", userId);
-            
-            if ([self.delegate respondsToSelector:@selector(didRecieveUserId:forType:)])
-            {
-                [self.delegate didRecieveUserId:userId forType:SIFacebook];
-            }
+            _fbCompletionHandler (userId);
             // we interpret an error in the initial fetch as a reason to
             // fail the user switch, and leave the application without an
             // active user (similar to initial state)
@@ -239,10 +238,7 @@
 
 - (void) fetchLinkedinUserId:(NSString *) userId
 {
-    if ([self.delegate respondsToSelector:@selector(didRecieveUserId:forType:)])
-    {
-        [self.delegate didRecieveUserId:userId forType:SILinkedIn];
-    }
+    _liCompletionHandler (userId);
 }
 
 @end

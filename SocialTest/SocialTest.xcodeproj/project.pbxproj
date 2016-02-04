@@ -44,7 +44,6 @@
 
 /* Begin PBXFileReference section */
 		1FB4A3C01C5FBB330098F314 /* login_button_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button_twitter.png; sourceTree = "<group>"; };
-		6CBAC34D1B9EB482002D0B83 /* SIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIApplication.h; sourceTree = "<group>"; };
 		6CBAC34F1B9EB5E3002D0B83 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Framework/FacebookSDK.framework; sourceTree = "<group>"; };
 		6CBAC3571B9EB617002D0B83 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		6CBAC3591B9EB61F002D0B83 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -203,7 +202,6 @@
 		6CE195B31B997BE100A74C58 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				6CBAC34D1B9EB482002D0B83 /* SIApplication.h */,
 				6CE195B41B997BE100A74C58 /* SocialIntegration.h */,
 			);
 			path = include;

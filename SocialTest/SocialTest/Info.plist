@@ -55,32 +55,12 @@
 	<string>Social Login</string>
 	<key>GoogleClientId</key>
 	<string>660869542834-tvn3l0s8k54uibe3fgts5cdotsb77i2t.apps.googleusercontent.com</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>com.google.gppconsent.2.4.1</string>
-		<string>com.google.gppconsent.2.4.0</string>
-		<string>com.google.gppconsent.2.3.0</string>
-		<string>com.google.gppconsent.2.2.0</string>
-		<string>com.google.gppconsent</string>
-		<string>hasgplus4</string>
-		<string>googlechrome-x-callback</string>
-		<string>googlechrome</string>
-		<string>gplus</string>
-		<string>com-google-gidconsent-google</string>
-		<string>com-google-gidconsent-youtube</string>
-		<string>com-google-gidconsent</string>
-	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>LinkedInApiKey</key>
 	<string>75omghtys4ohwi</string>
 	<key>LinkedInSecretKey</key>
 	<string>DYBcF8Uj2fgmZNaH</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>NSPrincipalClass</key>
 	<string>SIApplication</string>
 	<key>TwitterConsumerKey</key>

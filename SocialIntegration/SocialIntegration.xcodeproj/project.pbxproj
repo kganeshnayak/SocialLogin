@@ -13,8 +13,6 @@
 		1FB4A3BD1C5FABEC0098F314 /* FHSStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB4A3BA1C5FABEC0098F314 /* FHSStream.m */; };
 		1FB4A3BE1C5FABEC0098F314 /* FHSTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB4A3BC1C5FABEC0098F314 /* FHSTwitterEngine.m */; };
 		6CBAC3201B9EB00C002D0B83 /* SIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBAC31C1B9EB00C002D0B83 /* SIApplication.m */; };
-		6CBAC32A1B9EB10B002D0B83 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3271B9EB10B002D0B83 /* GoogleOpenSource.framework */; };
-		6CBAC32B1B9EB10B002D0B83 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3291B9EB10B002D0B83 /* GooglePlus.framework */; };
 		6CBAC32D1B9EB14F002D0B83 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC32C1B9EB14F002D0B83 /* AssetsLibrary.framework */; };
 		6CBAC32F1B9EB15D002D0B83 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC32E1B9EB15D002D0B83 /* CoreLocation.framework */; };
 		6CBAC3311B9EB178002D0B83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3301B9EB178002D0B83 /* MediaPlayer.framework */; };
@@ -75,9 +73,6 @@
 		1FB4A3BC1C5FABEC0098F314 /* FHSTwitterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHSTwitterEngine.m; sourceTree = "<group>"; };
 		6CBAC31B1B9EB00C002D0B83 /* SIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIApplication.h; sourceTree = "<group>"; };
 		6CBAC31C1B9EB00C002D0B83 /* SIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIApplication.m; sourceTree = "<group>"; };
-		6CBAC3271B9EB10B002D0B83 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
-		6CBAC3281B9EB10B002D0B83 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
-		6CBAC3291B9EB10B002D0B83 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
 		6CBAC32C1B9EB14F002D0B83 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		6CBAC32E1B9EB15D002D0B83 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6CBAC3301B9EB178002D0B83 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -173,8 +168,6 @@
 				6CBAC3311B9EB178002D0B83 /* MediaPlayer.framework in Frameworks */,
 				6CBAC32F1B9EB15D002D0B83 /* CoreLocation.framework in Frameworks */,
 				6CBAC32D1B9EB14F002D0B83 /* AssetsLibrary.framework in Frameworks */,
-				6CBAC32A1B9EB10B002D0B83 /* GoogleOpenSource.framework in Frameworks */,
-				6CBAC32B1B9EB10B002D0B83 /* GooglePlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,9 +387,6 @@
 				6CBAC3301B9EB178002D0B83 /* MediaPlayer.framework */,
 				6CBAC32E1B9EB15D002D0B83 /* CoreLocation.framework */,
 				6CBAC32C1B9EB14F002D0B83 /* AssetsLibrary.framework */,
-				6CBAC3271B9EB10B002D0B83 /* GoogleOpenSource.framework */,
-				6CBAC3281B9EB10B002D0B83 /* GooglePlus.bundle */,
-				6CBAC3291B9EB10B002D0B83 /* GooglePlus.framework */,
 				6CE1965B1B99C99000A74C58 /* FacebookSDK.framework */,
 			);
 			name = Framework;

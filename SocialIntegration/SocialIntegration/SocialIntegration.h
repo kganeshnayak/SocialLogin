@@ -9,27 +9,21 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+/**
+ completionHandler returning dictionary
+ */
+typedef void (^CompletionHandler)(NSString* userId);
+
+
 typedef NS_ENUM(NSUInteger, SISocialType) {
     SITwitter,
     SIFacebook,
     SILinkedIn,
-    SIGooglePlus
+    SIGoogle
 };
-
-@protocol SISocialProtocol <NSObject>
-
--(void) didRecieveUserId:(NSString *) userId forType:(SISocialType) aType;
-
-@end
-
 
 @interface SocialIntegration : UIViewController
 
-- (void) addFacebookButtonAtFrame:(CGRect) aFrame withImage:(UIImage *) image;
-- (void) addLinkedInButtonAtFrame:(CGRect) aFrame withImage:(UIImage *) image;
-- (void) addGooglePlusButtonAtFrame:(CGRect) aFrame withImage:(UIImage *) image;
-- (void) addTwitterButtonAtFrame:(CGRect) aFrame withImage:(UIImage *) image;
+- (void) loginToService:(SISocialType) eType withSignInButtonImage:(UIImage *) buttonImage atCoordinateSpace:(CGRect) aRect withCompletionHandler:(CompletionHandler)inCompletionHandler;
 
-
-@property (weak, nonatomic) id <SISocialProtocol> delegate;
 @end
