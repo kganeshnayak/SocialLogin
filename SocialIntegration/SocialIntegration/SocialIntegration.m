@@ -166,8 +166,7 @@
     
     // we pass the correct behavior here to indicate the login workflow to use
     // (Facebook Login, fallback, etc.)
-    [session openWithBehavior:behavior
-            completionHandler:^(FBSession* innerSession, FBSessionState status,
+    [session openWithBehavior:behavior completionHandler:^(FBSession* innerSession, FBSessionState status,
                                 NSError* error) {
                 // this handler is called back whether the login succeeds or
                 // fails; in the

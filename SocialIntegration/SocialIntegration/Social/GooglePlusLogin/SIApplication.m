@@ -29,7 +29,4 @@
                      openURL:url
                      options:options];
 }
-
-
-
 @end

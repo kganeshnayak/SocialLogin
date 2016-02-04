@@ -64,10 +64,6 @@
             otherButtonTitles:nil];
         [alert show];
 
-        // Notify parent and close this view
-//        [[NSNotificationCenter defaultCenter]
-//            postNotificationName:@"loginViewDidFinish"
-//                          object:self];
         [self profileApiCall];
     }
     [self requestTokenFromProvider];
@@ -360,13 +356,7 @@
     else {
         self.accessToken = [[OAToken alloc] initWithHTTPResponseBody:responseBody];
     }
-    // Notify parent and close this view
-//    [[NSNotificationCenter defaultCenter]
-//        postNotificationName:@"loginViewDidFinish"
-//                      object:self];
     [self profileApiCall];
-
-    // Dissmiss view controller
 }
 
 - (void)accessTokenResult:(OAServiceTicket*)ticket didFail:(NSData*)data
