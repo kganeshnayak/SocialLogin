@@ -51,7 +51,7 @@ This project will serve as a login to iOS apps. At present you can login with Fa
     			}
 		}
 
-	3.3 add open url delegate for OS below iOS 9 as:
+	3.4 add open url delegate for OS below iOS 9 as:
 
 		- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation 
 		{
