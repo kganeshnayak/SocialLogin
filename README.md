@@ -26,10 +26,10 @@ This project will serve as a login to iOS apps. At present you can login with Fa
 
 	3.2 add another delegate as below:
 
-	- (void)applicationDidBecomeActive:(UIApplication *)application
-	{
-    		[FBSDKAppEvents activateApp];
-	}
+		- (void)applicationDidBecomeActive:(UIApplication *)application
+		{
+    			[FBSDKAppEvents activateApp];
+		}
 
 	3.3 add open url delegate for iOS 9 as below
 
