@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F3831901B9B5F8C009FA94B /* SIOAuthLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE1960D1B999C5800A74C58 /* SIOAuthLoginViewController.m */; };
 		1FAFE63C1B9CAAD000178117 /* SIActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE196151B999C7500A74C58 /* SIActivityIndicator.m */; };
-		1FAFE63D1B9CAADC00178117 /* SIFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE1960A1B999C5800A74C58 /* SIFacebookManager.m */; };
 		1FB4A3BD1C5FABEC0098F314 /* FHSStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB4A3BA1C5FABEC0098F314 /* FHSStream.m */; };
 		1FB4A3BE1C5FABEC0098F314 /* FHSTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB4A3BC1C5FABEC0098F314 /* FHSTwitterEngine.m */; };
-		6CBAC3201B9EB00C002D0B83 /* SIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBAC31C1B9EB00C002D0B83 /* SIApplication.m */; };
 		6CBAC32D1B9EB14F002D0B83 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC32C1B9EB14F002D0B83 /* AssetsLibrary.framework */; };
 		6CBAC32F1B9EB15D002D0B83 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC32E1B9EB15D002D0B83 /* CoreLocation.framework */; };
 		6CBAC3311B9EB178002D0B83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3301B9EB178002D0B83 /* MediaPlayer.framework */; };
@@ -27,9 +25,10 @@
 		6CBAC3451B9EB1C4002D0B83 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3441B9EB1C4002D0B83 /* CoreMotion.framework */; };
 		6CBAC3471B9EB1CA002D0B83 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3461B9EB1CA002D0B83 /* QuartzCore.framework */; };
 		6CBAC3491B9EB1D4002D0B83 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3481B9EB1D4002D0B83 /* AddressBook.framework */; };
-		6CBAC34C1B9EB43D002D0B83 /* SIApplication.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CBAC31B1B9EB00C002D0B83 /* SIApplication.h */; };
 		6CD154F51B987F0900E0E80B /* SocialIntegration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CD154F41B987F0900E0E80B /* SocialIntegration.h */; };
 		6CD154F71B987F0900E0E80B /* SocialIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD154F61B987F0900E0E80B /* SocialIntegration.m */; };
+		6CDBDD2F1C64CAAB00375AA1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CDBDD2E1C64CAAB00375AA1 /* FBSDKLoginKit.framework */; };
+		6CDBDD311C64CD6E00375AA1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CDBDD301C64CD6E00375AA1 /* FBSDKCoreKit.framework */; };
 		6CE196461B99A15800A74C58 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE1961E1B99A15800A74C58 /* NSMutableURLRequest+Parameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6CE196471B99A15800A74C58 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE196201B99A15800A74C58 /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6CE196481B99A15800A74C58 /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE196221B99A15800A74C58 /* NSURL+Base.m */; };
@@ -59,7 +58,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				6CBAC34C1B9EB43D002D0B83 /* SIApplication.h in CopyFiles */,
 				6CD154F51B987F0900E0E80B /* SocialIntegration.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,8 +69,6 @@
 		1FB4A3BA1C5FABEC0098F314 /* FHSStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHSStream.m; sourceTree = "<group>"; };
 		1FB4A3BB1C5FABEC0098F314 /* FHSTwitterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHSTwitterEngine.h; sourceTree = "<group>"; };
 		1FB4A3BC1C5FABEC0098F314 /* FHSTwitterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHSTwitterEngine.m; sourceTree = "<group>"; };
-		6CBAC31B1B9EB00C002D0B83 /* SIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIApplication.h; sourceTree = "<group>"; };
-		6CBAC31C1B9EB00C002D0B83 /* SIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIApplication.m; sourceTree = "<group>"; };
 		6CBAC32C1B9EB14F002D0B83 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		6CBAC32E1B9EB15D002D0B83 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6CBAC3301B9EB178002D0B83 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -93,11 +89,15 @@
 		6CBAC37A1B9EC0DB002D0B83 /* btn_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_close@2x.png"; path = "SocialIntegration/SupportingFiles/Images/btn_close@2x.png"; sourceTree = SOURCE_ROOT; };
 		6CBAC3821B9EEA23002D0B83 /* login_button_facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_button_facebook.png; path = SocialIntegration/SupportingFiles/Images/login_button_facebook.png; sourceTree = SOURCE_ROOT; };
 		6CBAC3831B9EEA6C002D0B83 /* login_button_linkedin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_button_linkedin.png; path = SocialIntegration/SupportingFiles/Images/login_button_linkedin.png; sourceTree = SOURCE_ROOT; };
+		6CD0F8101C6872D000368E5A /* Application.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		6CD0F8111C6872D000368E5A /* Project-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
+		6CD0F8121C6872D000368E5A /* Project-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Project-Release.xcconfig"; sourceTree = "<group>"; };
+		6CD0F8131C6872D000368E5A /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		6CD154F11B987F0900E0E80B /* libSocialIntegration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSocialIntegration.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD154F41B987F0900E0E80B /* SocialIntegration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocialIntegration.h; sourceTree = "<group>"; };
 		6CD154F61B987F0900E0E80B /* SocialIntegration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialIntegration.m; sourceTree = "<group>"; };
-		6CE196091B999C5800A74C58 /* SIFacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIFacebookManager.h; sourceTree = "<group>"; };
-		6CE1960A1B999C5800A74C58 /* SIFacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIFacebookManager.m; sourceTree = "<group>"; };
+		6CDBDD2E1C64CAAB00375AA1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		6CDBDD301C64CD6E00375AA1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		6CE1960C1B999C5800A74C58 /* SIOAuthLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIOAuthLoginViewController.h; sourceTree = "<group>"; };
 		6CE1960D1B999C5800A74C58 /* SIOAuthLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIOAuthLoginViewController.m; sourceTree = "<group>"; };
 		6CE196141B999C7500A74C58 /* SIActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIActivityIndicator.h; sourceTree = "<group>"; };
@@ -141,7 +141,6 @@
 		6CE196421B99A15800A74C58 /* OATokenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OATokenManager.h; sourceTree = "<group>"; };
 		6CE196431B99A15800A74C58 /* OATokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OATokenManager.m; sourceTree = "<group>"; };
 		6CE196441B99A15800A74C58 /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthConsumer.h; sourceTree = "<group>"; };
-		6CE1965B1B99C99000A74C58 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		6CF979191C61D0B100B2A884 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
 		6CF9791A1C61D0B100B2A884 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
 		6CF9791C1C61D11B00B2A884 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -152,12 +151,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CDBDD2F1C64CAAB00375AA1 /* FBSDKLoginKit.framework in Frameworks */,
 				6CF9791D1C61D11B00B2A884 /* StoreKit.framework in Frameworks */,
 				6CBAC3491B9EB1D4002D0B83 /* AddressBook.framework in Frameworks */,
 				6CBAC3471B9EB1CA002D0B83 /* QuartzCore.framework in Frameworks */,
 				6CF9791B1C61D0B100B2A884 /* GoogleSignIn.framework in Frameworks */,
 				6CBAC3451B9EB1C4002D0B83 /* CoreMotion.framework in Frameworks */,
 				6CBAC3431B9EB1BE002D0B83 /* MobileCoreServices.framework in Frameworks */,
+				6CDBDD311C64CD6E00375AA1 /* FBSDKCoreKit.framework in Frameworks */,
 				6CBAC3411B9EB1B6002D0B83 /* MessageUI.framework in Frameworks */,
 				6CBAC33F1B9EB1AE002D0B83 /* SystemConfiguration.framework in Frameworks */,
 				6CBAC33D1B9EB1A5002D0B83 /* Security.framework in Frameworks */,
@@ -194,16 +195,6 @@
 			path = FHSTwitterEngine;
 			sourceTree = "<group>";
 		};
-		6CBAC3181B9EB00C002D0B83 /* GooglePlusLogin */ = {
-			isa = PBXGroup;
-			children = (
-				6CBAC31B1B9EB00C002D0B83 /* SIApplication.h */,
-				6CBAC31C1B9EB00C002D0B83 /* SIApplication.m */,
-			);
-			name = GooglePlusLogin;
-			path = Social/GooglePlusLogin;
-			sourceTree = "<group>";
-		};
 		6CBAC3771B9EC074002D0B83 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +205,18 @@
 				6CBAC3831B9EEA6C002D0B83 /* login_button_linkedin.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		6CD0F80F1C6872D000368E5A /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				6CD0F8101C6872D000368E5A /* Application.xcconfig */,
+				6CD0F8111C6872D000368E5A /* Project-Debug.xcconfig */,
+				6CD0F8121C6872D000368E5A /* Project-Release.xcconfig */,
+				6CD0F8131C6872D000368E5A /* Project.xcconfig */,
+			);
+			name = Configurations;
+			path = SupportingFiles/Configurations;
 			sourceTree = "<group>";
 		};
 		6CD154E81B987F0900E0E80B = {
@@ -236,6 +239,7 @@
 		6CD154F31B987F0900E0E80B /* SocialIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				6CD0F80F1C6872D000368E5A /* Configurations */,
 				6CE195B71B99995600A74C58 /* Social */,
 				6CD154F41B987F0900E0E80B /* SocialIntegration.h */,
 				6CD154F61B987F0900E0E80B /* SocialIntegration.m */,
@@ -249,8 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				1FB4A3B71C5FABEC0098F314 /* TwitterLogin */,
-				6CBAC3181B9EB00C002D0B83 /* GooglePlusLogin */,
-				6CE196081B999C5800A74C58 /* FacebookLogin */,
 				6CE1960B1B999C5800A74C58 /* LinkedInLogin */,
 			);
 			name = Social;
@@ -265,16 +267,6 @@
 			);
 			name = SupportingFiles;
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6CE196081B999C5800A74C58 /* FacebookLogin */ = {
-			isa = PBXGroup;
-			children = (
-				6CE196091B999C5800A74C58 /* SIFacebookManager.h */,
-				6CE1960A1B999C5800A74C58 /* SIFacebookManager.m */,
-			);
-			name = FacebookLogin;
-			path = Social/FacebookLogin;
 			sourceTree = "<group>";
 		};
 		6CE1960B1B999C5800A74C58 /* LinkedInLogin */ = {
@@ -370,6 +362,8 @@
 		6CE1965A1B99C99000A74C58 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				6CDBDD301C64CD6E00375AA1 /* FBSDKCoreKit.framework */,
+				6CDBDD2E1C64CAAB00375AA1 /* FBSDKLoginKit.framework */,
 				6CF979191C61D0B100B2A884 /* GoogleSignIn.bundle */,
 				6CF9791A1C61D0B100B2A884 /* GoogleSignIn.framework */,
 				6CBAC3481B9EB1D4002D0B83 /* AddressBook.framework */,
@@ -387,7 +381,6 @@
 				6CBAC3301B9EB178002D0B83 /* MediaPlayer.framework */,
 				6CBAC32E1B9EB15D002D0B83 /* CoreLocation.framework */,
 				6CBAC32C1B9EB14F002D0B83 /* AssetsLibrary.framework */,
-				6CE1965B1B99C99000A74C58 /* FacebookSDK.framework */,
 			);
 			name = Framework;
 			path = SocialIntegration/SupportingFiles/Framework;
@@ -470,7 +463,6 @@
 				6CE1964A1B99A15800A74C58 /* hmac.c in Sources */,
 				6CE196571B99A15800A74C58 /* OATokenManager.m in Sources */,
 				6CE196471B99A15800A74C58 /* NSString+URLEncoding.m in Sources */,
-				6CBAC3201B9EB00C002D0B83 /* SIApplication.m in Sources */,
 				6CE196531B99A15800A74C58 /* OAProblem.m in Sources */,
 				1F3831901B9B5F8C009FA94B /* SIOAuthLoginViewController.m in Sources */,
 				6CE196561B99A15800A74C58 /* OAToken.m in Sources */,
@@ -490,7 +482,6 @@
 				6CE196501B99A15800A74C58 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
 				1FB4A3BD1C5FABEC0098F314 /* FHSStream.m in Sources */,
 				6CE196521B99A15800A74C58 /* OAPlaintextSignatureProvider.m in Sources */,
-				1FAFE63D1B9CAADC00178117 /* SIFacebookManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

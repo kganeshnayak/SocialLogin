@@ -9,15 +9,15 @@
 #import "SocialIntegration.h"
 #import "SIOAuthLoginViewController.h"
 
-#import <FacebookSDK/FacebookSDK.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 #import "SIActivityIndicator.h"
-#import "SIFacebookManager.h"
 #import "FHSTwitterEngine.h"
 
 #import <GoogleSignIn/GoogleSignIn.h>
 
 @interface SocialIntegration()<LinkedinProtocol, GIDSignInUIDelegate, GIDSignInDelegate>
-@property (nonatomic, strong) SIFacebookManager *facebookManager;
 @property (nonatomic, copy) CompletionHandler fbCompletionHandler;
 @property (nonatomic, copy) CompletionHandler glCompletionHandler;
 @property (nonatomic, copy) CompletionHandler liCompletionHandler;
@@ -136,7 +136,22 @@
 
 - (void) signInWithFacebook
 {
-    [self loginWithFacebook];
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login
+     logInWithReadPermissions: @[@"public_profile"]
+     fromViewController:self
+     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         if (error) {
+             NSLog(@"Process error");
+         } else if (result.isCancelled) {
+             NSLog(@"Cancelled");
+         } else {
+             NSLog(@"Logged in");
+             
+             NSString *userId = [result.token userID];                  // For client-side use only!
+             _fbCompletionHandler (userId);
+         }
+     }];
 }
 
 - (void) performBounceEffectWithView:(UIView *) theView
@@ -154,85 +169,6 @@
             }];
         }];
     }];
-}
-
-- (void) loginWithFacebook
-{
-    _facebookManager = [[SIFacebookManager alloc] init];
-    [_facebookManager clearSessionInManager];
-    
-    FBSessionLoginBehavior behavior = FBSessionLoginBehaviorForcingWebView;
-    FBSession *session = [_facebookManager createSession];
-    
-    // we pass the correct behavior here to indicate the login workflow to use
-    // (Facebook Login, fallback, etc.)
-    [session openWithBehavior:behavior completionHandler:^(FBSession* innerSession, FBSessionState status,
-                                NSError* error) {
-                // this handler is called back whether the login succeeds or
-                // fails; in the
-                // success case it will also be called back upon each state
-                // transition between
-                // session-open and session-close
-                [SIActivityIndicator showActivityIndicatorInView:self.view];
-
-                if (error) {
-                    NSLog(@"Error Occured");
-                    [_facebookManager clearSessionInManager];
-                    [SIActivityIndicator hideActivityIndicatorInView:self.view];
-                }
-                [self updateUserSession];
-            }];
-}
-
-- (void)updateUserSession
-{
-    // Get the current session from the userManager
-    FBSession* session = _facebookManager.currentSession;
-    
-    if (session.isOpen) {
-        // fetch profile info such as name, id, etc. for the open session
-        FBRequest *me = [[FBRequest alloc] initWithSession:session graphPath:@"me"];
-        
-        [me startWithCompletionHandler:^(FBRequestConnection* connection,
-                                         NSDictionary<FBGraphUser>* result,
-                                         NSError* error) {
-            [SIActivityIndicator hideActivityIndicatorInView:self.view];
-
-            NSString *userId = result.id;
-            _fbCompletionHandler (userId);
-            // we interpret an error in the initial fetch as a reason to
-            // fail the user switch, and leave the application without an
-            // active user (similar to initial state)
-            if (error) {
-                NSLog(@"Couldn't switch user: %@", error.localizedDescription);
-                [_facebookManager clearSessionInManager];
-                return;
-            }
-        }];
-    }
-    else {
-        [SIActivityIndicator hideActivityIndicatorInView:self.view];
-
-        // in the closed case, we check to see if we picked up a cached token that
-        // we
-        // expect to be valid and ready for use; if so then we open the session on
-        // the spot
-        if (session.state == FBSessionStateCreatedTokenLoaded) {
-            // even though we had a cached token, we need to login to make the session
-            // usable
-            [session openWithCompletionHandler:^(FBSession* innerSession,
-                                         FBSessionState status, NSError* error) {
-                 [self updateUserSession];
-             }];
-        }
-    }
-    
-    [FBRequestConnection startWithGraphPath:@"/me" parameters:nil HTTPMethod:@"GET" completionHandler:^(FBRequestConnection* connection,
-                         NSDictionary<FBGraphUser>* result, NSError* error)
-     {
-//         NSLog(@"User Info =%@", result);
-         /* handle the result */
-     }];
 }
 
 - (void) fetchLinkedinUserId:(NSString *) userId

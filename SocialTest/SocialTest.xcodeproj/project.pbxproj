@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1FB4A3C11C5FBB330098F314 /* login_button_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FB4A3C01C5FBB330098F314 /* login_button_twitter.png */; };
-		6CBAC3531B9EB5E3002D0B83 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC34F1B9EB5E3002D0B83 /* FacebookSDK.framework */; };
 		6CBAC3581B9EB617002D0B83 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3571B9EB617002D0B83 /* AddressBook.framework */; };
 		6CBAC35A1B9EB61F002D0B83 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC3591B9EB61F002D0B83 /* QuartzCore.framework */; };
 		6CBAC35C1B9EB628002D0B83 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CBAC35B1B9EB628002D0B83 /* CoreMotion.framework */; };
@@ -28,13 +27,15 @@
 		6CBAC3811B9EC148002D0B83 /* login_button_google.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBAC37E1B9EC148002D0B83 /* login_button_google.png */; };
 		6CBAC3861B9F054B002D0B83 /* login_button_facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBAC3841B9F054B002D0B83 /* login_button_facebook.png */; };
 		6CBAC3871B9F054B002D0B83 /* login_button_linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBAC3851B9F054B002D0B83 /* login_button_linkedin.png */; };
+		6CD0F8091C686FF600368E5A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD0F8071C686FF600368E5A /* FBSDKCoreKit.framework */; };
+		6CD0F80A1C686FF600368E5A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD0F8081C686FF600368E5A /* FBSDKLoginKit.framework */; };
+		6CD0F80E1C6871B100368E5A /* libSocialIntegration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD0F80D1C6871B100368E5A /* libSocialIntegration.a */; };
 		6CD154C31B987D3B00E0E80B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD154C21B987D3B00E0E80B /* main.m */; };
 		6CD154C61B987D3B00E0E80B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD154C51B987D3B00E0E80B /* AppDelegate.m */; };
 		6CD154C91B987D3B00E0E80B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD154C81B987D3B00E0E80B /* ViewController.m */; };
 		6CD154CC1B987D3B00E0E80B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CD154CA1B987D3B00E0E80B /* Main.storyboard */; };
 		6CD154CE1B987D3B00E0E80B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CD154CD1B987D3B00E0E80B /* Images.xcassets */; };
 		6CD154D11B987D3B00E0E80B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD154CF1B987D3B00E0E80B /* LaunchScreen.xib */; };
-		6CE195B61B997BE100A74C58 /* libSocialIntegration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE195B51B997BE100A74C58 /* libSocialIntegration.a */; };
 		6CF979231C61D74C00B2A884 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF979221C61D74C00B2A884 /* StoreKit.framework */; };
 		6CF979251C61D77900B2A884 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CF979241C61D77900B2A884 /* GoogleService-Info.plist */; };
 		6CF979281C61D83D00B2A884 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6CF979261C61D83D00B2A884 /* GoogleSignIn.bundle */; };
@@ -44,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		1FB4A3C01C5FBB330098F314 /* login_button_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button_twitter.png; sourceTree = "<group>"; };
-		6CBAC34F1B9EB5E3002D0B83 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Framework/FacebookSDK.framework; sourceTree = "<group>"; };
 		6CBAC3571B9EB617002D0B83 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		6CBAC3591B9EB61F002D0B83 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6CBAC35B1B9EB628002D0B83 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -65,6 +65,9 @@
 		6CBAC37E1B9EC148002D0B83 /* login_button_google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_button_google.png; path = Images/login_button_google.png; sourceTree = "<group>"; };
 		6CBAC3841B9F054B002D0B83 /* login_button_facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_button_facebook.png; path = Images/login_button_facebook.png; sourceTree = "<group>"; };
 		6CBAC3851B9F054B002D0B83 /* login_button_linkedin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_button_linkedin.png; path = Images/login_button_linkedin.png; sourceTree = "<group>"; };
+		6CD0F8071C686FF600368E5A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Framework/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		6CD0F8081C686FF600368E5A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Framework/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		6CD0F80D1C6871B100368E5A /* libSocialIntegration.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSocialIntegration.a; path = SocialTest/libSocialIntegration.a; sourceTree = SOURCE_ROOT; };
 		6CD154BD1B987D3B00E0E80B /* SocialTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD154C11B987D3B00E0E80B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CD154C21B987D3B00E0E80B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -76,7 +79,6 @@
 		6CD154CD1B987D3B00E0E80B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6CD154D01B987D3B00E0E80B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6CE195B41B997BE100A74C58 /* SocialIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialIntegration.h; sourceTree = "<group>"; };
-		6CE195B51B997BE100A74C58 /* libSocialIntegration.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialIntegration.a; sourceTree = "<group>"; };
 		6CF979221C61D74C00B2A884 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6CF979241C61D77900B2A884 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6CF979261C61D83D00B2A884 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = Framework/GoogleSignIn.bundle; sourceTree = "<group>"; };
@@ -91,12 +93,15 @@
 			files = (
 				6CF9792B1C61D88E00B2A884 /* libz.tbd in Frameworks */,
 				6CF979231C61D74C00B2A884 /* StoreKit.framework in Frameworks */,
+				6CD0F80A1C686FF600368E5A /* FBSDKLoginKit.framework in Frameworks */,
 				6CBAC3741B9EB6B5002D0B83 /* AssetsLibrary.framework in Frameworks */,
 				6CBAC3721B9EB6B0002D0B83 /* CoreLocation.framework in Frameworks */,
 				6CBAC3701B9EB6AA002D0B83 /* MediaPlayer.framework in Frameworks */,
 				6CBAC36E1B9EB685002D0B83 /* CoreText.framework in Frameworks */,
+				6CD0F80E1C6871B100368E5A /* libSocialIntegration.a in Frameworks */,
 				6CBAC36C1B9EB680002D0B83 /* CoreGraphics.framework in Frameworks */,
 				6CBAC35C1B9EB628002D0B83 /* CoreMotion.framework in Frameworks */,
+				6CD0F8091C686FF600368E5A /* FBSDKCoreKit.framework in Frameworks */,
 				6CBAC3681B9EB650002D0B83 /* Foundation.framework in Frameworks */,
 				6CBAC3661B9EB64A002D0B83 /* UIKit.framework in Frameworks */,
 				6CBAC3641B9EB640002D0B83 /* Security.framework in Frameworks */,
@@ -105,8 +110,6 @@
 				6CBAC35E1B9EB62E002D0B83 /* MobileCoreServices.framework in Frameworks */,
 				6CBAC35A1B9EB61F002D0B83 /* QuartzCore.framework in Frameworks */,
 				6CBAC3581B9EB617002D0B83 /* AddressBook.framework in Frameworks */,
-				6CE195B61B997BE100A74C58 /* libSocialIntegration.a in Frameworks */,
-				6CBAC3531B9EB5E3002D0B83 /* FacebookSDK.framework in Frameworks */,
 				6CF979291C61D83D00B2A884 /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +120,9 @@
 		6CBAC34E1B9EB589002D0B83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CF9792A1C61D88E00B2A884 /* libz.tbd */,
+				6CD0F8071C686FF600368E5A /* FBSDKCoreKit.framework */,
+				6CD0F8081C686FF600368E5A /* FBSDKLoginKit.framework */,
 				6CF979261C61D83D00B2A884 /* GoogleSignIn.bundle */,
 				6CF979271C61D83D00B2A884 /* GoogleSignIn.framework */,
 				6CBAC3731B9EB6B5002D0B83 /* AssetsLibrary.framework */,
@@ -134,7 +140,6 @@
 				6CBAC35B1B9EB628002D0B83 /* CoreMotion.framework */,
 				6CBAC3591B9EB61F002D0B83 /* QuartzCore.framework */,
 				6CBAC3571B9EB617002D0B83 /* AddressBook.framework */,
-				6CBAC34F1B9EB5E3002D0B83 /* FacebookSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,7 +160,6 @@
 		6CD154B41B987D3B00E0E80B = {
 			isa = PBXGroup;
 			children = (
-				6CF9792A1C61D88E00B2A884 /* libz.tbd */,
 				6CF979221C61D74C00B2A884 /* StoreKit.framework */,
 				6CD154BF1B987D3B00E0E80B /* SocialTest */,
 				6CD154BE1B987D3B00E0E80B /* Products */,
@@ -191,7 +195,7 @@
 				6CBAC37B1B9EC114002D0B83 /* Images */,
 				6CBAC34E1B9EB589002D0B83 /* Frameworks */,
 				6CE195B31B997BE100A74C58 /* include */,
-				6CE195B51B997BE100A74C58 /* libSocialIntegration.a */,
+				6CD0F80D1C6871B100368E5A /* libSocialIntegration.a */,
 				6CD154C11B987D3B00E0E80B /* Info.plist */,
 				6CF979241C61D77900B2A884 /* GoogleService-Info.plist */,
 				6CD154C21B987D3B00E0E80B /* main.m */,
@@ -413,6 +417,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SocialTest",
+					"$(PROJECT_DIR)/SocialTest/Framework",
 				);
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
@@ -443,6 +448,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SocialTest",
+					"$(PROJECT_DIR)/SocialTest/Framework",
 				);
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
