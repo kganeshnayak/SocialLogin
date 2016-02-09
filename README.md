@@ -17,7 +17,64 @@ This project will serve as a login to iOS apps. At present you can login with Fa
 Note: For SignIn with Google, add GoogleService-Info.plist to your bundle also add REVERSED_CLIENT_ID (found in GoogleService-Info.plist)
  to URL Schemes in Target->URL Types.
 
-3. Add the below keys to your main plist file in your project.
+3. In your project AppDelegate add these code as below:
+
+	3.1 in method didFinishLaunchingWithOptions add
+	
+	    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+
+	3.2 add another delegate as below:
+
+	- (void)applicationDidBecomeActive:(UIApplication *)application
+	{
+    		[FBSDKAppEvents activateApp];
+	}
+
+	3.3 add open url delegate for iOS 9 as below
+
+	- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options
+	{
+
+   		if ([[url scheme] isEqualToString:@“FACEBOOK_URL_SCHEME”])
+    		{
+        		return [[FBSDKApplicationDelegate sharedInstance] application:app
+                                                              openURL:url
+                                                    sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                           annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+    		}
+    		else	// FOR GOOGLE
+    		{
+        		return [[GIDSignIn sharedInstance] handleURL:url
+                                   	            sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                         annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+    		}
+	}
+
+	3.3 add open url delegate for OS below iOS 9 as:
+
+	- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation 
+	{
+
+    		if ([[url scheme] isEqualToString:@"FACEBOOK_URL_SCHEME"])
+    		{
+        		return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                              openURL:url
+                                                    sourceApplication:sourceApplication
+                                                           annotation:annotation];
+    		}
+    		else 	// FOR GOOGLE
+    		{
+       			NSDictionary *options = @{UIApplicationOpenURLOptionsSourceApplicationKey: sourceApplication,
+                                  			   UIApplicationOpenURLOptionsAnnotationKey: annotation};
+        		return [self application:application
+                         		  openURL:url
+                         		  options:options];
+    		}
+	}
+	
+
+4. Add the below keys to your main plist file in your project.
 
 (You can add all or only those keys required for respective social n/w used in your project)
 
@@ -29,7 +86,7 @@ LinkedInApiKey
 LinkedInSecretKey
 GoogleClientId
  
-4. Add the following frameworks to your project.
+5. Add the following frameworks to your project.
 
 (You can add all or only those frameworks required for respective social n/w used in your project)
 
@@ -46,4 +103,7 @@ MessageUI.framework
 MobileCoreServices.framework
 CoreMotion.framework
 QuartzCore.framework
-FacebookSDK.framework
+FBSDKCoreKit.framework
+FBSDKLoginKit.framework
+GoogleSignIn.bundle
+GoogleSignIn.framework
