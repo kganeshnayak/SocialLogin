@@ -14,7 +14,7 @@ This project will serve as a login to iOS apps. At present you can login with Fa
 
 		- (void) loginToService:(SISocialType) eType withSignInButtonImage:(UIImage *) buttonImage atCoordinateSpace:(CGRect) aRect withCompletionHandler:(CompletionHandler)inCompletionHandler;
 
-Note: For SignIn with Google, add GoogleService-Info.plist to your bundle also add REVERSED_CLIENT_ID (found in GoogleService-Info.plist)
+	Note: For SignIn with Google, add GoogleService-Info.plist to your bundle also add REVERSED_CLIENT_ID (found in GoogleService-Info.plist)
  to URL Schemes in Target->URL Types.
 
 3. In your project AppDelegate add these code as below:
