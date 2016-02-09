@@ -33,45 +33,45 @@ Note: For SignIn with Google, add GoogleService-Info.plist to your bundle also a
 
 	3.3 add open url delegate for iOS 9 as below
 
-	- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options
-	{
+		- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options
+		{
 
-   		if ([[url scheme] isEqualToString:@“FACEBOOK_URL_SCHEME”])
-    		{
-        		return [[FBSDKApplicationDelegate sharedInstance] application:app
-                                                              openURL:url
-                                                    sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+   			if ([[url scheme] isEqualToString:@“FACEBOOK_URL_SCHEME”])
+    			{
+        			return [[FBSDKApplicationDelegate sharedInstance] application:app
+                                                              			      openURL:url
+                                                    													 		     sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
                                                            annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
-    		}
-    		else	// FOR GOOGLE
-    		{
-        		return [[GIDSignIn sharedInstance] handleURL:url
-                                   	            sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+    			}
+    			else	// FOR GOOGLE
+    			{
+        			return [[GIDSignIn sharedInstance] handleURL:url
+                                   	            														sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
                                                          annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
-    		}
-	}
+    			}
+		}
 
 	3.3 add open url delegate for OS below iOS 9 as:
 
-	- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation 
-	{
+		- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation 
+		{
 
-    		if ([[url scheme] isEqualToString:@"FACEBOOK_URL_SCHEME"])
-    		{
-        		return [[FBSDKApplicationDelegate sharedInstance] application:application
+    			if ([[url scheme] isEqualToString:@"FACEBOOK_URL_SCHEME"])
+    			{
+        			return [[FBSDKApplicationDelegate sharedInstance] application:application
                                                               openURL:url
                                                     sourceApplication:sourceApplication
                                                            annotation:annotation];
-    		}
-    		else 	// FOR GOOGLE
-    		{
-       			NSDictionary *options = @{UIApplicationOpenURLOptionsSourceApplicationKey: sourceApplication,
+    			}
+    			else 	// FOR GOOGLE
+    			{
+       				NSDictionary *options = @{UIApplicationOpenURLOptionsSourceApplicationKey: sourceApplication,
                                   			   UIApplicationOpenURLOptionsAnnotationKey: annotation};
-        		return [self application:application
-                         		  openURL:url
-                         		  options:options];
-    		}
-	}
+        			return [self application:application
+                         		  	openURL:url
+                         		  	options:options];
+    			}
+		}
 	
 
 4. Add the below keys to your main plist file in your project.
