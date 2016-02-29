@@ -16,6 +16,9 @@ This project will serve as a login to iOS apps. At present you can login with Fa
 
 	Note: For SignIn with Google, add GoogleService-Info.plist to your bundle also add REVERSED_CLIENT_ID (found in GoogleService-Info.plist)
  to URL Schemes in Target->URL Types.
+ 	      Also note that CompletionHandler is of type completion block with NSDictionary as the parameter.
+ 	      		typedef void (^CompletionHandler)(NSDictionary* userInfo);
+ 	      Use "userId" key to get user id and "email" to get email id.
 
 3. In your project AppDelegate add these code as below:
 
