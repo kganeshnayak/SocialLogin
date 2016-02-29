@@ -12,7 +12,7 @@
 /**
  completionHandler returning dictionary
  */
-typedef void (^CompletionHandler)(NSString *userId);
+typedef void (^CompletionHandler)(NSDictionary* userInfo);
 
 
 typedef NS_ENUM(NSUInteger, SISocialType) {

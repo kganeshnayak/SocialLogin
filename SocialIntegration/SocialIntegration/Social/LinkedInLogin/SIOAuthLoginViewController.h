@@ -10,7 +10,7 @@
 
 @protocol LinkedinProtocol <NSObject>
 
-- (void) fetchLinkedinUserId:(NSString *) userId;
+- (void) fetchLinkedinUserId:(NSString *) userId withEmailId:(NSString *) emailId;
 
 @end
 

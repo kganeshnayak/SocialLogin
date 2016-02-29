@@ -77,7 +77,7 @@
 
 - (void)profileApiCall
 {
-    NSURL* url = [NSURL URLWithString:@"https://api.linkedin.com/v1/people/~"];
+    NSURL* url = [NSURL URLWithString:@"https://api.linkedin.com/v1/people/~:(id,first-name,last-name,maiden-name,email-address)"];
     OAMutableURLRequest* request =
     [[OAMutableURLRequest alloc] initWithURL:url
                                     consumer:self.consumer
@@ -101,27 +101,31 @@
     NSDictionary* profile = [NSJSONSerialization JSONObjectWithData:data
                                     options:NSJSONReadingMutableContainers
                                       error:nil];
-    // NSLog(@"Profile information =%@", profile);
+ NSLog(@"Profile information =%@", profile);
     
-    NSDictionary* siteStandardProfileRequest = profile[@"siteStandardProfileRequest"];
-    NSString* url = siteStandardProfileRequest[@"url"];
+//    NSDictionary* siteStandardProfileRequest = profile[@"siteStandardProfileRequest"];
+//    NSString* url = siteStandardProfileRequest[@"url"];
+//    
+//    NSString* userId;
+//    NSString* string = url;
+//    
+//    NSRange range = [string rangeOfString:@"id="];
+//    NSString* tempUrl = [string substringFromIndex:range.location];
+//    NSRange range2 = [tempUrl rangeOfString:@"&"];
+//    
+//    userId = [tempUrl substringWithRange:NSMakeRange(0, range2.location)];
+//    userId = [userId stringByReplacingOccurrencesOfString:@"id=" withString:@""];
     
-    NSString* userId;
-    NSString* string = url;
     
-    NSRange range = [string rangeOfString:@"id="];
-    NSString* tempUrl = [string substringFromIndex:range.location];
-    NSRange range2 = [tempUrl rangeOfString:@"&"];
+    NSString *userId = [profile objectForKey:@"id"];
+    NSString *email = [profile objectForKey:@"emailAddress"];
     
-    userId = [tempUrl substringWithRange:NSMakeRange(0, range2.location)];
-    userId = [userId stringByReplacingOccurrencesOfString:@"id=" withString:@""];
-    
-    if (userId) {
+    if (userId && email) {
         // NSLog(@"User id is %@",userId);
         
-        if ([self.delegate respondsToSelector:@selector(fetchLinkedinUserId:)])
+        if ([self.delegate respondsToSelector:@selector(fetchLinkedinUserId:withEmailId:)])
         {
-            [self.delegate fetchLinkedinUserId:userId];
+            [self.delegate fetchLinkedinUserId:userId withEmailId:email];
         }
         [SIActivityIndicator hideActivityIndicatorInView:self.view];
         [self closeBtnTapped];

@@ -90,7 +90,7 @@
 
     UIViewController *loginController = [[FHSTwitterEngine sharedEngine]loginControllerWithCompletionHandler:^(BOOL success) {
         FHSTwitterEngine *twitterEngine = [FHSTwitterEngine sharedEngine];
-        _twCompletionHandler (twitterEngine.authenticatedID);
+        _twCompletionHandler (@{@"userId":twitterEngine.authenticatedID, @"email":@""});
     }];
     [self presentViewController:loginController animated:YES completion:nil];
 }
@@ -121,7 +121,7 @@
 //    NSString *idToken = user.authentication.idToken; // Safe to send to the server
 //    NSString *name = user.profile.name;
 //    NSString *email = user.profile.email;
-    _glCompletionHandler (userId);
+    _glCompletionHandler (@{@"userId":userId, @"email":@""});
 }
 
 - (void) signInWithLinkedIn
@@ -149,7 +149,7 @@
              NSLog(@"Logged in");
              
              NSString *userId = [result.token userID];                  // For client-side use only!
-             _fbCompletionHandler (userId);
+             _fbCompletionHandler (@{@"userId":userId, @"email":@""});
          }
      }];
 }
@@ -171,9 +171,9 @@
     }];
 }
 
-- (void) fetchLinkedinUserId:(NSString *) userId
+- (void) fetchLinkedinUserId:(NSString *) userId withEmailId:(NSString *) emailId
 {
-    _liCompletionHandler (userId);
+    _liCompletionHandler (@{@"userId":userId, @"email":@""});
 }
 
 @end

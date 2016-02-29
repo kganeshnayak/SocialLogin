@@ -21,29 +21,31 @@
 
     [self loginToService:SITwitter
    withSignInButtonImage:[UIImage imageNamed:@"login_button_twitter"]
-       atCoordinateSpace:theRect withCompletionHandler:^(NSString *userId) {
-           NSLog(@"Twitter Id:%@",userId);
+       atCoordinateSpace:theRect withCompletionHandler:^(NSDictionary *userInfo) {
+           NSLog(@"Twitter Id:%@",[userInfo objectForKey:@"userId"]);
        }];
     theRect = CGRectMake((self.view.frame.size.width/2)-(200/2), 150, 200, 40);
 
     [self loginToService:SIFacebook
    withSignInButtonImage:[UIImage imageNamed:@"login_button_facebook"]
-       atCoordinateSpace:theRect withCompletionHandler:^(NSString *userId) {
-           NSLog(@"Facebook Id:%@",userId);
+       atCoordinateSpace:theRect withCompletionHandler:^(NSDictionary *userInfo) {
+           NSLog(@"Facebook Id:%@",[userInfo objectForKey:@"userId"]);
        }];
     theRect = CGRectMake((self.view.frame.size.width/2)-(200/2), 200, 200, 40);
 
     [self loginToService:SIGoogle
    withSignInButtonImage:[UIImage imageNamed:@"login_button_google"]
-       atCoordinateSpace:theRect withCompletionHandler:^(NSString *userId) {
-           NSLog(@"Google Id:%@",userId);
+       atCoordinateSpace:theRect withCompletionHandler:^(NSDictionary *userInfo) {
+           NSLog(@"Google Id:%@",[userInfo objectForKey:@"userId"]);
+           
        }];
     theRect = CGRectMake((self.view.frame.size.width/2)-(200/2), 250, 200, 40);
 
     [self loginToService:SILinkedIn
    withSignInButtonImage:[UIImage imageNamed:@"login_button_linkedin"]
-       atCoordinateSpace:theRect withCompletionHandler:^(NSString *userId) {
-           NSLog(@"LinkedIn Id:%@",userId);
+       atCoordinateSpace:theRect withCompletionHandler:^(NSDictionary *userInfo) {
+           NSLog(@"LinkedIn Id:%@",[userInfo objectForKey:@"userId"]);
+           NSLog(@"LinkedIn email:%@",[userInfo objectForKey:@"email"]);
        }];
 }
 
