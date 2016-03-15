@@ -120,8 +120,8 @@
     NSString *userId = user.userID;                  // For client-side use only!
 //    NSString *idToken = user.authentication.idToken; // Safe to send to the server
 //    NSString *name = user.profile.name;
-//    NSString *email = user.profile.email;
-    _glCompletionHandler (@{@"userId":userId, @"email":@""});
+    NSString *email = user.profile.email;
+    _glCompletionHandler (@{@"userId":userId, @"email":email});
 }
 
 - (void) signInWithLinkedIn
@@ -141,6 +141,12 @@
      logInWithReadPermissions: @[@"public_profile"]
      fromViewController:self
      handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         
+         NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
+         [parameters setValue:@"id, name, email" forKey:@"fields"];
+
+         
+         
          if (error) {
              NSLog(@"Process error");
          } else if (result.isCancelled) {
@@ -148,6 +154,14 @@
          } else {
              NSLog(@"Logged in");
              
+             
+             
+             [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:parameters]
+              startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result1, NSError *error1)
+              {
+                  NSLog(@"Fetched user is:%@", result1);
+              }];
+
              NSString *userId = [result.token userID];                  // For client-side use only!
              _fbCompletionHandler (@{@"userId":userId, @"email":@""});
          }

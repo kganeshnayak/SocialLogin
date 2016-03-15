@@ -25,7 +25,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb844297865583436</string>
+				<string></string>
 			</array>
 		</dict>
 		<dict>
@@ -43,28 +43,28 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.660869542834-tvn3l0s8k54uibe3fgts5cdotsb77i2t</string>
+				<string></string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>844297865583436</string>
+	<string></string>
 	<key>FacebookDisplayName</key>
 	<string>Social Login</string>
 	<key>GoogleClientId</key>
-	<string>660869542834-tvn3l0s8k54uibe3fgts5cdotsb77i2t.apps.googleusercontent.com</string>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>LinkedInApiKey</key>
-	<string>75omghtys4ohwi</string>
+	<string></string>
 	<key>LinkedInSecretKey</key>
-	<string>DYBcF8Uj2fgmZNaH</string>
+	<string></string>
 	<key>TwitterConsumerKey</key>
-	<string>I22LgkvDAThdFoAJ0CaSZqlPo</string>
+	<string></string>
 	<key>TwitterSecretKey</key>
-	<string>dPMkmXZl1PZmGPemhiUMB8WCYJsYXsm6hhc48UuO3ALq3p34ep</string>
+	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
