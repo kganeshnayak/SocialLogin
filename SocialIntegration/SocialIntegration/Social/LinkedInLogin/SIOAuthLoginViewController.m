@@ -290,13 +290,13 @@
         else {
             // User refused to allow our app access
             // Notify parent and close this view
-//            [[NSNotificationCenter defaultCenter]
-//                postNotificationName:@"loginViewDidFinish"
-//                              object:self
-//                            userInfo:nil];
-//
+            [[NSNotificationCenter defaultCenter]
+                postNotificationName:@"loginViewDidFinish"
+                              object:self
+                            userInfo:nil];
+
             // Dissmiss view controller
-            [self profileApiCall];
+            [self closeBtnTapped];
         }
     }
     else {

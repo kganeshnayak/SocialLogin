@@ -121,7 +121,10 @@
 //    NSString *idToken = user.authentication.idToken; // Safe to send to the server
 //    NSString *name = user.profile.name;
     NSString *email = user.profile.email;
-    _glCompletionHandler (@{@"userId":userId, @"email":email});
+    
+    if (userId && email) {
+        _glCompletionHandler (@{@"userId":userId, @"email":email});
+    }
 }
 
 - (void) signInWithLinkedIn
